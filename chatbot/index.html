@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <textarea id="request_text" cols="30" rows="5"></textarea>
+        <br>
+        <input type="button" onClick="reply()" value="話しかける" class="btn">
+        <br><br>
+        <textarea id="response_text" cols="30" rows="5" disabled></textarea>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="server.js"></script>
+</body>
+</html>
