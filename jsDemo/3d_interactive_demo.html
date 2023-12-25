@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3D顔デモ</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://threejs.org/build/three.js"></script>
+    <script>
+        let scene, camera, renderer, face, eye1, eye2;
+
+        function init() {
+            // シーンの作成
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xdddddd);
+
+            // カメラの作成
+            camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 5000);
+            camera.position.z = 1000;
+
+            // レンダラーの作成
+            renderer = new THREE.WebGLRenderer({antialias: true});
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // 人の顔のような形の作成
+            let geometry = new THREE.BoxGeometry(100, 100, 100);
+            let material = new THREE.MeshNormalMaterial();
+
+            // 目を作成
+            let eyeGeometry = new THREE.BoxGeometry(20, 20, 10);
+            let eyeMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+            eye1 = new THREE.Mesh(eyeGeometry, eyeMaterial);
+            eye1.position.set(-20, 20, 50);
+            eye2 = new THREE.Mesh(eyeGeometry, eyeMaterial);
+            eye2.position.set(20, 20, 50);
+
+            // 顔のメッシュを作成
+            face = new THREE.Mesh(geometry, material);
+            face.position.set(0, 0, 0);
+
+            // 顔に目を追加
+            face.add(eye1);
+            face.add(eye2);
+
+            scene.add(face);
+
+            // アニメーションの追加
+            animate();
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            face.rotation.x += 0.01;
+            face.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+
+        init();
+
+        // リサイズイベント
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+</body>
+</html>
