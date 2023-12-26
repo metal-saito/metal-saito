@@ -1,0 +1,83 @@
+/* 基本的なスタイル設定 */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* 天気予報全体のスタイル */
+.weatherForecast {
+  width: 100%;
+  max-width: 840px;
+  margin: 20px auto;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* 個々の天気予報のスタイル */
+.weather {
+  flex: 1 1 calc(100% / 7);
+  box-sizing: border-box;
+  padding: 5px;
+  text-align: center;
+  border-left: 1px solid #eee;
+}
+
+/* 最初の要素の左境界線を削除 */
+.weather:first-child {
+  border-left: none;
+}
+
+/* 天気予報のホバー効果 */
+.weather:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* 日付、天気画像、気温のスタイル */
+.weather > div {
+  margin: 5px 0;
+}
+
+/* 天気画像のスタイル */
+.weatherImg {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+/* 最低気温のスタイル */
+.tempMin {
+  color: #0000FF;
+}
+
+/* 最高気温のスタイル */
+.tempMax {
+  color: #FF0000;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 600px) {
+  .weather {
+    flex-basis: calc(100% / 3);
+  }
+}
+
+@media (max-width: 400px) {
+  .weather {
+    flex-basis: 50%;
+  }
+
+  .weather > div {
+    font-size: 12px;
+  }
+}
