@@ -1,19 +1,22 @@
-/* グラデーションアニメーションのキーフレームを定義 */
+/* アニメーションのキーフレームを定義 */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 
 /* 基本的なスタイリング */
 body {
     font-family: 'Arial', sans-serif;
     color: #333;
     background: linear-gradient(45deg, #9EADC8, #B8CAD4);
-    background-size: 200% 200%; /* グラデーションサイズを大きくする */
-    animation: gradientAnimation 15s ease infinite; /* グラデーションアニメーションを適用 */
+    background-size: 200% 200%;
+    animation: gradientAnimation 15s ease infinite;
     margin: 0;
     padding: 0;
     display: flex;
@@ -28,26 +31,27 @@ body {
     max-width: 600px;
     margin: auto;
     padding: 20px;
-    background-color: #E3EAF5; /* 柔らかい青系の背景色 */
-    border: 1px solid #D3D9E3; /* 枠線を穏やかに */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 控えめな影 */
+    background-color: #E3EAF5;
+    border: 1px solid #D3D9E3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    animation: pop 0.6s ease forwards;
 }
 
 .title {
     font-size: 2.5em;
-    color: #556982; /* 柔らかい色に変更 */
+    color: #556982;
     text-align: center;
     margin-bottom: 20px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽い影 */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* チャットコンテナスタイル */
 .chat-container {
     width: 100%;
 }
 
+/* 入力・出力コンテナスタイル */
 .input-container, .output-container {
     width: 100%;
     margin-bottom: 10px;
@@ -56,6 +60,7 @@ body {
     background-color: #fff;
 }
 
+/* テキストエリアスタイル */
 .input-container textarea, .output-container textarea {
     width: 100%;
     height: 150px;
@@ -67,17 +72,19 @@ body {
     transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
+/* フォーカス時のテキストエリアスタイル */
 .input-container textarea:focus, .output-container textarea:focus {
-    border-color: #AAC0D1; /* フォーカス時の境界色を穏やかに */
+    border-color: #AAC0D1;
     box-shadow: 0 0 8px rgba(170, 192, 209, 0.5);
 }
 
+/* ボタンスタイル */
 .btn-container {
     text-align: center;
 }
 
 .btn {
-    background-color: #6789A8; /* ボタンの背景色を穏やかに */
+    background-color: #6789A8;
     color: white;
     border: none;
     border-radius: 5px;
@@ -88,13 +95,26 @@ body {
     box-shadow: 0 5px 15px rgba(103, 137, 168, 0.4);
 }
 
+/* ボタンのホバー・フォーカススタイル */
 .btn:hover, .btn:focus {
     background-color: #55799B;
     transform: translateY(-2px);
     box-shadow: 0 7px 20px rgba(103, 137, 168, 0.5);
-    animation: rotate 2s linear infinite; /* ボタンが回転するアニメーション */
+
 }
 
+/* ボタン内のアイコンスタイル */
+.btn i {
+    margin-right: 8px;
+}
+
+/* タイトル内のアイコンスタイル */
+.title i {
+    margin-right: 10px;
+    color: #556982;
+}
+
+/* レスポンシブデザイン */
 @media (max-width: 768px) {
     .container {
         width: 95%;
@@ -103,6 +123,10 @@ body {
 
     .title {
         font-size: 1.5em;
+    }
+
+    .btn i {
+        margin-right: 5px;
     }
 
     .input-container textarea, .output-container textarea {

@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIチャットボット</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- ファビコンを追加 -->
 </head>
 <body>
     <div class="container">
-        <h1 class="title">AIチャットボット</h1>
+      <h1 class="title"><i class="fas fa-comments"></i> AIチャットボット</h1>
         <div class="chat-container">
             <div class="input-container">
                 <label for="request_text" class="visually-hidden">メッセージを入力:</label>
                 <textarea id="request_text" cols="30" rows="5" placeholder="ここにメッセージを入力してください" aria-label="メッセージ入力"></textarea>
             </div>
             <div class="btn-container">
-                <button onClick="reply()" class="btn" aria-label="メッセージを送信">話しかける</button>
-            </div>
+              <button onClick="reply()" class="btn"><i class="fas fa-paper-plane"></i> 話しかける</button>
+          </div>
             <div class="output-container">
                 <textarea id="response_text" cols="30" rows="5" disabled aria-label="チャットボットからの応答"></textarea>
             </div>
