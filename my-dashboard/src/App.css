@@ -1,0 +1,43 @@
+.App {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 60px 1fr;
+  height: 100vh;
+}
+
+.App-header {
+  grid-area: header;
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px; /* パディングを追加でタイトルに余白を設ける */
+}
+
+.App-sidebar {
+  grid-area: sidebar;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-right: 1px solid #ccc; /* サイドバーの右端に境界線を追加 */
+  overflow: auto; /* コンテンツが多い場合にスクロール可能にする */
+}
+
+.App-content {
+  grid-area: content;
+  padding: 10px;
+  overflow: auto; /* コンテンツが多い場合にスクロール可能にする */
+}
+
+/* ソーシャルメディアリンクのスタイリング */
+.App-footer {
+  grid-area: footer;
+  background-color: #282c34;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center; /* 中央に配置 */
+}
