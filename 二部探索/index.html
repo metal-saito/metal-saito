@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Binary Search Demo</title>
+</head>
+<body>
+    <h2>Binary Search Demo</h2>
+    <p>探索する数値: <input type="number" id="targetValue" value="9"></p>
+    <button onclick="performSearch()">探索開始</button>
+    <p id="result">結果はここに表示されます。</p>
+
+    <script>
+        function binarySearch(arr, target) {
+            let left = 0;
+            let right = arr.length - 1;
+
+            while (left <= right) {
+                const mid = Math.floor((left + right) / 2);
+
+                if (arr[mid] === target) {
+                    return mid;
+                }
+
+                if (arr[mid] < target) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+
+            return -1;
+        }
+
+        function performSearch() {
+            const array = [1, 3, 5, 7, 9, 11, 13, 15];
+            const target = parseInt(document.getElementById('targetValue').value);
+            const result = binarySearch(array, target);
+
+            const resultElement = document.getElementById('result');
+            if (result !== -1) {
+                resultElement.textContent = `要素はインデックス ${result} にあります。`;
+            } else {
+                resultElement.textContent = '要素は配列内に存在しません。';
+            }
+        }
+    </script>
+</body>
+</html>
