@@ -5,6 +5,7 @@
 **Full-Stack Engineer | 20+ years experience | Fintech / Banking Systems**
 
 [![note](https://img.shields.io/badge/note-%E8%97%A4%E6%B2%A2%E3%81%AE%E3%83%81%E3%83%A3%E3%82%B2%E3%82%A2%E3%82%B9%E5%A5%BD%E3%81%8D-41C9B4?style=flat-square&logo=note.mu&logoColor=white)](https://note.com/ojineko)
+[![note followers](https://img.shields.io/badge/note_followers-165-41C9B4?style=flat-square&logo=note.mu&logoColor=white)](https://note.com/ojineko)
 [![GitHub followers](https://img.shields.io/github/followers/metal-saito?style=flat-square&color=6e5494)](https://github.com/metal-saito?tab=followers)
 
 </div>
